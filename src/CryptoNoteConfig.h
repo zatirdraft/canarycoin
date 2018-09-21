@@ -203,9 +203,8 @@ const static boost::uuids::uuid CRYPTONOTE_NETWORK =
 
 const char* const SEED_NODES[] = {
    "109.201.133.111:22257", //it's probably in the air
-            "209.58.140.85:22257",//if it is in the air
-            "54.36.26.145:22257", // zatir 
-            "185.206.180.104:22257" // draft
-
+            "8.26.56.26:20122",//if it is in the air
+            "8.20.247.20:20122", // zatir 
+    
 };
 } // CryptoNote
