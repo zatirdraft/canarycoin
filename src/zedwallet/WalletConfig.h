@@ -10,10 +10,10 @@
 namespace WalletConfig
 {
     /* The prefix your coins address starts with */
-    const std::string addressPrefix = "SETH";
+    const std::string addressPrefix = "Zat";
 
     /* Your coins 'Ticker', e.g. Monero = XMR, Bitcoin = BTC */
-    const std::string ticker = "SETH";
+    const std::string ticker = "Zat";
 
     /* The filename to output the CSV to in save_csv */
     const std::string csvFilename = "transactions.csv";
@@ -23,10 +23,10 @@ namespace WalletConfig
     const std::string addressBookFilename = ".addressBook.json";
 
     /* The name of your deamon */
-    const std::string daemonName = "CanaryCoind";
+    const std::string daemonName = "ZatirCoind";
 
     /* The name to call this wallet */
-    const std::string walletName = "SethWallet";
+    const std::string walletName = "ZatirWallet";
 
     /* The name of walletd, the programmatic rpc interface to a wallet */
     const std::string walletdName = "service";
@@ -35,7 +35,7 @@ namespace WalletConfig
     const std::string coinName = std::string(CryptoNote::CRYPTONOTE_NAME);
 
     /* Where can your users contact you for support? E.g. discord */
-    const std::string contactLink = "http://canary.futurepow.com";
+    const std::string contactLink = "https://t.me/GoodtripGO";
 
 
     /* The number of decimals your coin has */
@@ -44,7 +44,7 @@ namespace WalletConfig
 
 
     /* The length of a standard address for your coin */
-    const long unsigned int standardAddressLength = 99;
+    const long unsigned int standardAddressLength = 98;
 
     /* The length of an integrated address for your coin */
     const long unsigned int integratedAddressLength = 236;
