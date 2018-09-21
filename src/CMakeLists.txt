@@ -117,8 +117,8 @@ add_dependencies(poolwallet version)
 add_dependencies(P2P version)
 
 # Finally build the binaries
-set_property(TARGET TurtleCoind PROPERTY OUTPUT_NAME "CanaryCoind")
-set_property(TARGET zedwallet PROPERTY OUTPUT_NAME "SethWallet")
+set_property(TARGET TurtleCoind PROPERTY OUTPUT_NAME "ZatirCoind")
+set_property(TARGET zedwallet PROPERTY OUTPUT_NAME "ZatirWallet")
 set_property(TARGET service PROPERTY OUTPUT_NAME "service")
 set_property(TARGET poolwallet PROPERTY OUTPUT_NAME "warning-do-not-run")
-set_property(TARGET miner PROPERTY OUTPUT_NAME "lonelyminer")
+set_property(TARGET miner PROPERTY OUTPUT_NAME "draftminer")
