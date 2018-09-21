@@ -15,13 +15,13 @@
 namespace CryptoNote {
 namespace parameters {
 
-const uint64_t DIFFICULTY_TARGET                             = 210; // seconds
+const uint64_t DIFFICULTY_TARGET                             = 150; // seconds
 
 const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 453910;
-const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 10;
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 26562;
+const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 8;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 60 * 60 * 2;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V3         = 3 * DIFFICULTY_TARGET;
 
@@ -29,22 +29,22 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 60;
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V3          = 11;
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(350999999999999999);
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(1050000000);
 const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 0;
 const size_t ZAWY_DIFFICULTY_V2                              = 0;
-const uint8_t ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION       = 1;
+const uint8_t ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION       = 2;
 
-const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 2;
-const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V2              = 3;
+const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 3;
+const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V2              = 4;
 
 const uint64_t DIFFICULTY_WINDOW_V3                          = 60;
 const uint64_t DIFFICULTY_BLOCKS_COUNT_V3                    = DIFFICULTY_WINDOW_V3 + 1;
 
-const unsigned EMISSION_SPEED_FACTOR                         = 20;
+const unsigned EMISSION_SPEED_FACTOR                         = 18;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 /* Premine amount */
-const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(140400000000000);
+const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(0);
 
 /* How to generate a premine:
 
@@ -66,7 +66,7 @@ TurtleCoind --print-genesis-tx --genesis-block-reward-address TRTLv2Fyavy8CXG8BP
 * You should see your premine appear in the previously generated wallet.
 
 */
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001c2fda880df09029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101b18e0ab89ecd12760b67fed1580e4326013c6d14a74c7d8d742044b959770856";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001ffffffffffff0f029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121016c1b4f11ab8eb3f0fd0ab2729695f732dd23c3d89edcf3517eaad005fc4d22ed";
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; //size of block (bytes) after which reward for block calculated using block size
@@ -75,12 +75,12 @@ const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 10000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
 const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 2;
-const uint64_t MINIMUM_FEE                                   = UINT64_C(350);
+const uint64_t MINIMUM_FEE                                   = UINT64_C(10);
 
 const uint64_t MINIMUM_MIXIN_V1                              = 3;
 const uint64_t MAXIMUM_MIXIN_V1                              = 3;
-const uint64_t MINIMUM_MIXIN_V2                              = 3;
-const uint64_t MAXIMUM_MIXIN_V2                              = 3;
+const uint64_t MINIMUM_MIXIN_V2                              = 5;
+const uint64_t MAXIMUM_MIXIN_V2                              = 5;
 
 const uint32_t MIXIN_LIMITS_V1_HEIGHT                        = 1;
 const uint32_t MIXIN_LIMITS_V2_HEIGHT                        = 1;
@@ -135,10 +135,10 @@ static_assert(UPGRADE_VOTING_WINDOW > 1, "Bad UPGRADE_VOTING_WINDOW");
 /* Block heights we are going to have hard forks at */
 const uint64_t FORK_HEIGHTS[] =
 {
-    37428,
-    74457,
-    111485,
-    148513
+    51840,
+   103680,
+    155520,
+    207360
 };
 
 const uint64_t FORK_HEIGHTS_SIZE = sizeof(FORK_HEIGHTS) / sizeof(*FORK_HEIGHTS);
@@ -155,14 +155,14 @@ static_assert(CURRENT_FORK_INDEX >= 0, "CURRENT FORK INDEX must be >= 0");
 /* Make sure CURRENT_FORK_INDEX is a valid index, unless FORK_HEIGHTS is empty */
 static_assert(FORK_HEIGHTS_SIZE == 0 || CURRENT_FORK_INDEX < FORK_HEIGHTS_SIZE, "CURRENT_FORK_INDEX out of range of FORK_HEIGHTS!");
 
-const char     CRYPTONOTE_BLOCKS_FILENAME[]                  = "canaryblocks.bin";
-const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[]            = "canaryblockindexes.bin";
-const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "bobbyspoolstate.bin";
-const char     P2P_NET_DATA_FILENAME[]                       = "p2pstatehappiness.bin";
-const char     MINER_CONFIG_FILE_NAME[]                      = "dopeyminer_conf.json";
+const char     CRYPTONOTE_BLOCKS_FILENAME[]                  = "zatirblocks.bin";
+const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[]            = "zatirblockindexes.bin";
+const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "zatirspoolstate.bin";
+const char     P2P_NET_DATA_FILENAME[]                       = "p2pstatedraft.bin";
+const char     MINER_CONFIG_FILE_NAME[]                      = "zatirminer_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "CanaryCoin";
+const char     CRYPTONOTE_NAME[]                             = "ZatirCoin";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -178,8 +178,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  100;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  39699;
-const int      RPC_DEFAULT_PORT                              =  39700;
+const int      P2P_DEFAULT_PORT                              =  22257;
+const int      RPC_DEFAULT_PORT                              =  22258;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -198,11 +198,14 @@ const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 
 const static boost::uuids::uuid CRYPTONOTE_NETWORK =
 {
-    {  0x53, 0x45, 0x54, 0x48, 0x53, 0x43, 0x41, 0x4e, 0x41, 0x52, 0x59, 0x43, 0x4f, 0x49, 0x4e, 0x53  }
+    {  0x53, 0x41 , 0x54 , 0x49 , 0x52 , 0x43 , 0x4f , 0x49 , 0x4e , 0x53  }
 };
 
 const char* const SEED_NODES[] = {
-   "144.202.80.64:39699", //seth is probably going to regret this
-   "45.77.152.219:39699" //yes, regret setting in
+   "109.201.133.111:22257", //it's probably in the air
+            "209.58.140.85:22257",//if it is in the air
+            "54.36.26.145:22257", // zatir 
+            "185.206.180.104:22257" // draft
+
 };
 } // CryptoNote
