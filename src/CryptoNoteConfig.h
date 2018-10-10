@@ -202,6 +202,7 @@ const static boost::uuids::uuid CRYPTONOTE_NETWORK =
 };
 
 const char* const SEED_NODES[] = {
-   ":20122", //it's probably in the air
+   "185.136.96.66:20122", //it's probably in the air
+   "185.136.97.66:20122", //it's probably in the air", //it's probably in the air
 };
 } // CryptoNote
