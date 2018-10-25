@@ -23,7 +23,7 @@ namespace WalletConfig
     const std::string addressBookFilename = ".addressBook.json";
 
     /* The name of your deamon */
-    const std::string daemonName = "ZatirCoind";
+    const std::string daemonName = "zatir";
 
     /* The name to call this wallet */
     const std::string walletName = "ZatirWallet";
@@ -35,7 +35,7 @@ namespace WalletConfig
     const std::string coinName = std::string(CryptoNote::CRYPTONOTE_NAME);
 
     /* Where can your users contact you for support? E.g. discord */
-    const std::string contactLink = "https://t.me/GoodtripGO";
+    const std::string contactLink = "https://zatir.draft.io";
 
 
     /* The number of decimals your coin has */
