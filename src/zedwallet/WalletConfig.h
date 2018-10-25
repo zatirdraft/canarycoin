@@ -26,7 +26,7 @@ namespace WalletConfig
     const std::string daemonName = "zatir";
 
     /* The name to call this wallet */
-    const std::string walletName = "ZatirWallet";
+    const std::string walletName = "zatirWallet";
 
     /* The name of walletd, the programmatic rpc interface to a wallet */
     const std::string walletdName = "service";
