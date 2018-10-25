@@ -154,11 +154,11 @@ static_assert(CURRENT_FORK_INDEX >= 0, "CURRENT FORK INDEX must be >= 0");
 /* Make sure CURRENT_FORK_INDEX is a valid index, unless FORK_HEIGHTS is empty */
 static_assert(FORK_HEIGHTS_SIZE == 0 || CURRENT_FORK_INDEX < FORK_HEIGHTS_SIZE, "CURRENT_FORK_INDEX out of range of FORK_HEIGHTS!");
 
-const char     CRYPTONOTE_BLOCKS_FILENAME[]                  = "blocks.bin";
-const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[]            = "blockindexes.bin";
-const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "spoolstate.bin";
-const char     P2P_NET_DATA_FILENAME[]                       = "statedraft.bin";
-const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
+const char     CRYPTONOTE_BLOCKS_FILENAME[]                  = "zatirblocks.bin";
+const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[]            = "zatirblockindexes.bin";
+const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "zatirspoolstate.bin";
+const char     P2P_NET_DATA_FILENAME[]                       = "zatirstatedraft.bin";
+const char     MINER_CONFIG_FILE_NAME[]                      = "zatirminer_conf.json";
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "zatir";
